@@ -1,0 +1,30 @@
+	DO CASE
+		CASE FOUND() .AND. EMPTY(cus.cm_crdte) .AND. EMPTY(veh.vi_dsld) .AND. !EMPTY(veh.vi_darv)
+			REPLACE cus.cm_crdte WITH veh.vi_darv
+			ival = ival + 1
+			@10,23 SAY ival
+		
+		CASE FOUND() .AND. EMPTY(cus.cm_crdte) .AND. !EMPTY(veh.vi_dsld) .AND. EMPTY(veh.vi_darv)
+			REPLACE cus.cm_crdte WITH veh.vi_dsld
+			ival = ival + 1
+			@10,23 SAY ival
+
+		CASE FOUND() .AND. EMPTY(cus.cm_crdte) .AND. !EMPTY(veh.vi_darv) .AND. !EMPTY(veh.vi_dsld)
+			REPLACE cus.cm_crdte WITH veh.vi_dsld
+			ival = ival + 1
+			@10,23 SAY ival
+
+		CASE FOUND() .AND. EMPTY(cus.cm_crdte) .AND. EMPTY(veh.vi_darv) .AND. EMPTY(veh.vi_dsld)
+			REPLACE cus.cm_crdte WITH DATE()
+			ival = ival + 1
+			@10,23 SAY ival
+						
+		CASE !FOUND() .AND. EMPTY(cus.cm_crdte)
+			REPLACE cus.cm_crdte WITH DATE()
+			ival = ival + 1
+			@10,23 SAY ival
+*!*			OTHERWISE
+*!*				REPLACE cus.cm_crdte WITH DATE() FOR EMPTY(cus.cm_crdte)
+*!*				ival = ival + 1
+*!*				@10,23 SAY ival
+	ENDCASE

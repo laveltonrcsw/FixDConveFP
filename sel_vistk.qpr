@@ -1,0 +1,6 @@
+SELECT DISTINCT Vinmas.vi_vin, Vinmas.vi_stk, Vinmas.vi_cust;
+ FROM ;
+     vinmas;
+ WHERE  Vinmas.vi_stk >= ( "1000" );
+ GROUP BY Vinmas.vi_vin, Vinmas.vi_stk, Vinmas.vi_cust;
+ ORDER BY Vinmas.vi_stk

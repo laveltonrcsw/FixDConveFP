@@ -1,0 +1,13 @@
+# FoxPro
+.DS_Store
+*.app
+*.bak
+*.com
+*.dll
+*.err
+*.exe
+*.idx
+*.old
+foxuser.dbf
+foxuser.fpt
+
