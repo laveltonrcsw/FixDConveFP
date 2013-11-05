@@ -5,7 +5,7 @@ SET SAFETY OFF
 SET DELETED OFF
 
 SELECT 0
-USE "W:\Conversion Data\Data Files\BarrettChevrolet\f_i\DATA\vinmas" SHARED ALIAS vin02 && Incorrect File
+USE "W:\Conversion Data\Data Files\Chevrolet21\f_i\DATA\VINMAS" SHARED ALIAS vin02 && Incorrect File
 *!* SET FILTER TO ALLTRIM(vi_vstt) != "I"
 
 SELECT 0
