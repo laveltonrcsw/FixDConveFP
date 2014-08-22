@@ -1,5 +1,7 @@
+CLEAR
 CLOSE DATABASES ALL
 SET EXCLUSIVE OFF
+SET DELETED OFF
 SET SAFETY OFF
 
 PRIVATE imas, ivin, ipro
@@ -62,11 +64,12 @@ ipro = 0
 *!*	CLOSE DATABASES ALL
 
 SELECT 0
-*USE "N:\fixmast\fixmast.dbf" SHARED ALIAS fm01
+*!* USE "N:\fixmast\fixmast.dbf" SHARED ALIAS fm01
 USE "C:\ACS\lrc\fixmast.dbf" SHARED ALIAS fm01
+GO TOP
 
 SELECT 0
-*USE "N:\fixmast\PROLD01.dbf" SHARED ALIAS pro01
+*!* USE "N:\fixmast\PROLD01.dbf" SHARED ALIAS pro01
 USE "N:\APPS\ACSS\PROLD01.dbf" SHARED ALIAS pro01
 INDEX ON ALLTRIM(ps_deal) TO l
 GO TOP
@@ -74,18 +77,18 @@ GO TOP
 @12,2 SAY "PRO Dates (UPD)  = "
 
 DO WHILE !EOF()
-	SELECT pro01
-	SEEK ALLTRIM(fm01.vi_deal)
-	IF FOUND() .AND. ALLTRIM(pro01.ps_vin) == ALLTRIM(fm01.vi_vin)
-		REPLACE pro01.ps_crdte  WITH fm01.vi_bkdate
-		REPLACE pro01.ps_avdte  WITH fm01.vi_bkdate
-		REPLACE pro01.ps_closed WITH fm01.vi_bkdate
-		ipro = ipro + 1
-		@12,23 SAY ipro
-	ENDIF
-	SELECT fm01
-	SKIP
-enddo
+    SELECT pro01
+    SEEK ALLTRIM(fm01.vi_deal)
+    IF FOUND() .AND. ALLTRIM(pro01.ps_vin) == ALLTRIM(fm01.vi_vin)
+        REPLACE pro01.ps_crdte  WITH fm01.vi_bkdate
+        REPLACE pro01.ps_avdte  WITH fm01.vi_bkdate
+        REPLACE pro01.ps_closed WITH fm01.vi_bkdate
+        ipro = ipro + 1
+        @12,23 SAY ipro
+    ENDIF
+    SELECT fm01
+    SKIP
+ENDDO
 
 @13,2 SAY "The operation(s) is completed."
 
@@ -93,7 +96,4 @@ INKEY(5)
 
 CLOSE DATABASES ALL
 RETURN
-
-
-
 

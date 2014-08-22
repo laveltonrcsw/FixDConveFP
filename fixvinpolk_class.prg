@@ -5,7 +5,7 @@ SET SAFETY OFF
 SET DELETED OFF
 
 SELECT 0
-USE "W:\Conversion Data\Data Files\Chevrolet21\f_i\DATA\VINMAS" SHARED ALIAS vin02 && Incorrect File
+USE "W:\Conversion Data\Data Files\MitchellChevrolet\f_i\final\MASOLD01" SHARED ALIAS vin02 && Incorrect File
 *!* SET FILTER TO ALLTRIM(vi_vstt) != "I"
 
 SELECT 0
@@ -74,7 +74,7 @@ GO TOP
 REPLACE ALL vi_class  WITH "C" FOR EMPTY(ALLTRIM(vi_class))
 REPLACE ALL vi_cclass WITH ""
 GO TOP
-*!* REPLACE ALL vi_nu    WITH "U" FOR VAL(vi_yr) > 1910 .AND. VAL(vi_yr) < 2013 &&.AND. EMPTY(ALLTRIM(vi_nu))
+*!* REPLACE ALL vi_nu    WITH "U" FOR VAL(vi_yr) > 1910 .AND. VAL(vi_yr) < YEAR(DATE()) &&.AND. EMPTY(ALLTRIM(vi_nu))
 *!* REPLACE ALL vi_nu    WITH "N" FOR VAL(vi_yr) > 2012 &&.AND. EMPTY(ALLTRIM(vi_nu))
 REPLACE ALL vi_nu    WITH "T" FOR ALLTRIM(vi_nu) = "N" .AND. ALLTRIM(vi_class) = "T"
 REPLACE ALL vi_nu    WITH "K" FOR ALLTRIM(vi_nu) = "U" .AND. ALLTRIM(vi_class) = "T"
@@ -100,3 +100,4 @@ REPLACE ALL vi_nu    WITH "O" FOR ALLTRIM(vi_class) != "C" .AND. ALLTRIM(vi_clas
 
 CLOSE DATABASES ALL
 RETURN
+

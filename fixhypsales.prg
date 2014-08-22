@@ -5,7 +5,7 @@ CLOSE DATABASES ALL
 SET EXCLUSIVE OFF
 SET SAFETY OFF
 SET DELETE ON
-*SET DEFAULT TO "N:\APPS\ACSS"
+*!* SET DEFAULT TO "N:\APPS\ACSS"
 _VFP.CAPTION = "Fixing Hallmark's Hyundai/VW Sales History"
 
 PRIVATE ival1, ival2, ival3, ival4, ival5, ival6, jpart, ppart, rpart, rpartindex
@@ -256,3 +256,4 @@ INKEY(5)
 
 CLOSE DATABASES ALL
 RETURN
+
