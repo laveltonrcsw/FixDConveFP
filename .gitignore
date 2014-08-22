@@ -1,4 +1,4 @@
-# FoxPro
+# Visual FoxPro
 .DS_Store
 *.app
 *.bak
@@ -6,8 +6,58 @@
 *.dll
 *.err
 *.exe
+*.fll
 *.idx
 *.old
+*.tbk
+foxuser.cdx
 foxuser.dbf
 foxuser.fpt
 
+# Extension   File type
+# ----------------------------------------------
+# .act        Documenting Wizard action diagram
+# .app        Generated application
+# .cdx        Compound index
+# .dbc        Database
+# .dbf        Table
+# .dct        Database memo
+# .dcx        Database index
+# .dll        Windows Dynamic Link Library
+# .err        Compilation error
+# .exe        Executable program
+# .fky        Macro
+# .fll        FoxPro Dynamic Link Library
+# .fmt        Format File
+# .fpt        Table memo
+# .frt        Report memo
+# .frx        Report
+# .fxp        Compiled program
+# .hlp        Graphical Help
+# .idx        Index, compact index
+# .krt        Used in the recreation of a .dbc file
+#             NOTE: The .KRT extension is not listed in the online Help.
+# .lbt        Label memo
+# .lbx        Label
+# .lst        Documenting Wizard list
+# .mem        Memory variable saveDoslives
+# .mnt        Menu memo
+# .mnx        Menu
+# .mpr        Generated menu program
+# .mpx        Compiled menu program
+# .ocx        OLE control
+# .pjt        Project memo
+# .pjx        Project
+# .prg        Program
+# .qpr        Generated query program
+# .qpx        Compiled query program
+# .sct        Form memo
+# .scx        Form
+# .spr        Generated Screen Program (previous versions of FoxPro only)
+# .spx        Compiled Screen Program (previous versions of FoxPro only)
+# .tbk        Memo backup
+# .txt        Text
+# .vct        Visual class library memo
+# .vcx        Visual class library
+# .vue        FoxPro 2.x view
+# .win        Window file
